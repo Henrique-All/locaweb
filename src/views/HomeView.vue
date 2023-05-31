@@ -1,18 +1,39 @@
 <template>
+  <HeaderComponent />
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div class="home-content">
+      <div>
+        <h1>Olá João</h1>
+        <p>Seja bem vindo a sua conta de hospedagem.</p>
+      </div>
+      <div>
+        <img src="../assets/frag.png" alt="frame" />
+      </div>
+      <div>
+        <p>Caso tenha alguma dúvida, visite nossa central de ajuda.</p>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import HeaderComponent from "@/components/HeaderComponent/HeaderComponent.vue";
 
-export default {
-  name: "HomeView",
-  components: {
-    HelloWorld,
-  },
-};
+export default { components: { HeaderComponent } };
 </script>
+
+<style>
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafc;
+  font-family: "Poppins";
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+</style>
