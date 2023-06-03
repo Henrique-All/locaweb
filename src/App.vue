@@ -6,8 +6,9 @@
 * {
   margin: 0;
   padding: 0;
+  background-color: #fafafc;
 }
 #app {
-  background-color: #fafafc;
+  height: 100%;
 }
 </style>

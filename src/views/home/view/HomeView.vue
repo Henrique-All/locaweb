@@ -7,7 +7,7 @@
         <p>Seja bem vindo a sua conta de hospedagem.</p>
       </div>
       <div>
-        <img src="../assets/frag.png" alt="frame" />
+        <img src="../../../assets/frag.png" alt="frame" />
       </div>
       <div>
         <p>Caso tenha alguma dúvida, visite nossa central de ajuda.</p>
@@ -19,10 +19,20 @@
 <script>
 import HeaderComponent from "@/components/HeaderComponent/HeaderComponent.vue";
 
-export default { components: { HeaderComponent } };
+export default {
+  components: { HeaderComponent },
+
+  methods: {
+    getUsers() {
+      fetch("https://fakestoreapi.com/users")
+        .then((res) => res.json())
+        .then((json) => console.log(json));
+    },
+  },
+};
 </script>
 
-<style>
+<style scoped>
 .home {
   display: flex;
   justify-content: center;
@@ -35,5 +45,20 @@ export default { components: { HeaderComponent } };
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+@media (max-width: 800px) {
+  .home-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 90%;
+  }
+  .home-content img {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
 }
 </style>

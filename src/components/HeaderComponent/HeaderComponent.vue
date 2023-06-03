@@ -4,7 +4,7 @@
       <img src="../../assets/logo.png" alt="" />
       <div class="user">
         <button @click.stop.prevent="toogle()">J</button>
-        <router-link to="/" v-if="isOpen">Sair</router-link>
+        <router-link to="/" @click="clearLocal" v-if="isOpen">Sair</router-link>
       </div>
     </nav>
   </div>
@@ -19,6 +19,9 @@ export default {
   },
 
   methods: {
+    clearLocal() {
+      localStorage.removeItem("token");
+    },
     toogle() {
       this.isOpen = !this.isOpen;
     },
@@ -30,6 +33,7 @@ export default {
 .header {
   width: 100%;
   font-family: "Poppins";
+  padding: 0px;
 }
 
 .header-navigation {
@@ -37,6 +41,15 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+}
+
+@media (max-width: 800px) {
+  .header-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
 }
 
 .header-navigation button {
@@ -58,5 +71,15 @@ export default {
   top: 10%;
   color: #292d32;
   text-decoration: none;
+  animation: slidy 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+@keyframes slidy {
+  from {
+    top: 8%;
+  }
+  to {
+    top: 10%;
+  }
 }
 </style>
