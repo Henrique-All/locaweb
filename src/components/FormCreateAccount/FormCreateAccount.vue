@@ -37,7 +37,6 @@
         <input type="password" v-model="password" required />
         <p v-if="emailValidation" style="color: red">Senha Invalido</p>
         <p style="color: #515d74">No mínimo 8 caracteres</p>
-        <p>{{ password }}</p>
       </div>
       <div>
         <p>Confirme sua senha</p>
@@ -45,7 +44,6 @@
         <p v-if="confirmPasswordValidation" style="color: red">
           Senhas diferentes
         </p>
-        {{ confirmPassword }}
       </div>
       <div class="separation"></div>
       <div>

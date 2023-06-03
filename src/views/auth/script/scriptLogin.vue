@@ -48,7 +48,6 @@ export default {
         });
         localStorage.setItem("token", res.data.token);
         this.$router.push("/home");
-        console.log(res);
       } catch (err) {
         console.log(err);
         this.emailValidation = true;

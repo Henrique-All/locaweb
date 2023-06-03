@@ -1,5 +1,10 @@
 # locaweb
 
+# Login test
+
+email: John@gmail.com,      
+password: m38rmF$,
+
 ## Project setup
 ```
 yarn install
