@@ -73,7 +73,7 @@
 }
 input {
   width: 95%;
-  height: 80px;
+  height: 60px;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.4);
   font-size: 16px;
@@ -86,7 +86,7 @@ input::placeholder {
   color: #000000;
   font-size: 16px;
 }
-input[type="email"]:focus {
+input:focus {
   outline: none;
 }
 
