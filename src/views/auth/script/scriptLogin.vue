@@ -52,11 +52,8 @@ export default {
           username: name,
           password: password,
         });
-
-        setTimeout(() => {
-          localStorage.setItem("token", res.data.token);
-          this.$router.push("/home");
-        }, 2000);
+        localStorage.setItem("token", res.data.token);
+        this.$router.push("/home");
       } catch (err) {
         console.log(err);
         this.emailValidation = true;
