@@ -1,11 +1,10 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import Login from "../views/auth/views/LoginPageView.vue";
 
 const routes = [
   {
     path: "/",
     name: "login",
-    component: Login,
+    component: () => import("../views/auth/views/LoginPageView.vue"),
     meta: { requiresAuth: false },
   },
   {

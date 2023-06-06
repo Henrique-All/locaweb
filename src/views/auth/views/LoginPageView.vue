@@ -7,7 +7,7 @@
           <h1>Entre na sua conta</h1>
           <p>Para acessar sua conta informe seu e-mail e senha</p>
         </div>
-        <form class="login-form">
+        <form class="login-form" @submit.prevent="login">
           <div>
             <p>E-mail</p>
             <input
