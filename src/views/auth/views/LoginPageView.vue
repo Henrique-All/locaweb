@@ -33,6 +33,7 @@
             </div>
           </div>
           <button class="login-submit" @click="login">FAZER LOGIN</button>
+          <LoadingComponent v-if="this.loading" />
         </form>
       </div>
       <div class="login-create-account">

@@ -3,14 +3,16 @@
   <div class="home">
     <div class="home-content">
       <div>
-        <h1>Olá João</h1>
-        <p>Seja bem vindo a sua conta de hospedagem.</p>
-      </div>
-      <div>
-        <img src="../../../assets/frag.png" alt="frame" />
-      </div>
-      <div>
-        <p>Caso tenha alguma dúvida, visite nossa central de ajuda.</p>
+        <div>
+          <h1>Olá João</h1>
+          <p>Seja bem vindo a sua conta de hospedagem.</p>
+        </div>
+        <div>
+          <img src="../../../assets/frag.png" alt="frame" />
+        </div>
+        <div>
+          <p>Caso tenha alguma dúvida, visite nossa central de ajuda.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -44,7 +46,24 @@ export default {
 .home-content {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
+  width: 100%;
+}
+
+@media (max-width: 1000px) {
+  .home-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 90%;
+  }
+  .home-content img {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
 }
 
 @media (max-width: 800px) {

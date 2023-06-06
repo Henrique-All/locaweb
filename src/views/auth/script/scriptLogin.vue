@@ -1,5 +1,6 @@
 <script>
 import axios from "axios";
+import LoadingComponent from "@/components/Loadding/LoadingComponent.vue";
 
 export default {
   data() {
@@ -9,8 +10,11 @@ export default {
       users: [],
       emailValidation: false,
       passwordValidation: false,
+      loading: false,
     };
   },
+
+  components: { LoadingComponent },
 
   mounted() {
     fetch("https://fakestoreapi.com/users")
@@ -31,6 +35,8 @@ export default {
           this.passwordValidation = true;
           return;
         }
+        this.loading = true;
+
         let name = "";
         let password = "";
         this.users[0].forEach((userLog) => {
@@ -46,12 +52,16 @@ export default {
           username: name,
           password: password,
         });
-        localStorage.setItem("token", res.data.token);
-        this.$router.push("/home");
+
+        setTimeout(() => {
+          localStorage.setItem("token", res.data.token);
+          this.$router.push("/home");
+        }, 2000);
       } catch (err) {
         console.log(err);
         this.emailValidation = true;
         this.passwordValidation = true;
+        this.loading = false;
       } finally {
         setTimeout(() => {
           this.emailValidation = false;
